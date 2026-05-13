@@ -6,7 +6,12 @@ public class SistemaSeguridad {
     }
     public void registrarIntentoFallido() { intentosFallidos++; }
     public void mostrarEstado() {
-        String estado = (intentosFallidos >= 3) ? "BLOQUEADO" : "ACTIVO";
+        String estado;
+        if (intentosFallidos >= 3) {
+            estado = "BLOQUEADO";
+        } else {
+            estado = "ACTIVO";
+        }
         System.out.println("Sistema: " + nombreSistema + " | Estado: " + estado);
     }
 }
